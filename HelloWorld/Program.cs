@@ -13,7 +13,7 @@ namespace Hello {
       static int x;
       static Int32 y;
       static void Main(string[] args) {
-        Person sonja = new Person(7, "Sonja", "Olsen");
+        PropertyPerson sonja = new PropertyPerson(7, "Sonja", "Olsen");
         Console.WriteLine("ID: "+sonja.Id);
         Console.WriteLine("FN: "+sonja.FirstName);
         Console.WriteLine("LN: "+sonja.LastName);

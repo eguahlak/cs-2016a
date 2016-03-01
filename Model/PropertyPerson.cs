@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Model {
-  public class Person {
+  public class PropertyPerson {
     public int Id { get; private set; }
     public string FirstName { get; set; }
     private string lastName;
@@ -45,7 +45,7 @@ namespace Model {
       set { this.value = (long)(100*value); }
       }
 
-    public Person(int id, string firstName, string lastName) {
+    public PropertyPerson(int id, string firstName, string lastName) {
       Id = id;
       FirstName = firstName;
       // this.lastName = lastName;
