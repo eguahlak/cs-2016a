@@ -16,8 +16,7 @@ namespace Inheritance.Model {
       Id = id;
       }
 
-    public Person(int id, string name, DateTime birth) {
-      Id = id;
+    public Person(int id, string name, DateTime birth) : this(id) {
       Name = name;
       Birth = birth;
       }
@@ -45,11 +44,13 @@ namespace Inheritance.Model {
   public class Employee : Person, ITeam {
     public decimal Salary { get; set; }
     public DateTime Since { get; set; }
+    public IList<Person> Relatives { get; private set; }
 
     #region construction
     public Employee(int id) : base(id) {
       // super(id); Java syntax
-      Since = new DateTime(); 
+      Since = new DateTime();
+      Relatives = new List<Person>();
       }
     
     public Employee(
@@ -61,6 +62,7 @@ namespace Inheritance.Model {
         ) : base(id, name, birth) {
       Salary = salary;
       Since = since;
+      Relatives = new List<Person>();
       }
 
     public override string ToString() {

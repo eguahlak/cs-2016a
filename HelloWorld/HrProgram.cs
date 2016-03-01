@@ -11,6 +11,7 @@ namespace Hello.World {
       Console.WriteLine("Welcome to the awesome HR program");
       Person kurt = new Person(7, "Kurt", new DateTime(1989,12,24));
       Person ida = new Person(8, "Lille Ida", new DateTime(2009, 7, 14));
+      Person tom = new Person(9, "Store Tom", new DateTime(2012, 7, 14));
       Console.WriteLine(kurt);
       Console.WriteLine(ida);
       Employee sonja = new Employee(
@@ -22,6 +23,19 @@ namespace Hello.World {
           );
       Console.WriteLine(sonja);
       Console.WriteLine(sonja.Age);
+      sonja.Relatives.Add(ida);
+      sonja.Relatives.Add(tom);
+      foreach (Person person in sonja.Relatives) {
+        Console.WriteLine("Sonjas yngel: "+person);
+        }
+      for (int i = 0; i < sonja.Relatives.Count; i++) {
+        Console.WriteLine("Sonjas barn #{0} er {1}", i, sonja.Relatives[i]);
+        }
+      IEnumerator<Person> e = sonja.Relatives.GetEnumerator();
+      while (e.MoveNext()) {
+        Console.WriteLine("Sonjas "+e.Current.Name);
+        }
+
 
       Console.WriteLine(kurt.Status());
       Console.WriteLine(sonja.Status());
