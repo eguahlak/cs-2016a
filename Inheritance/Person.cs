@@ -42,7 +42,7 @@ namespace Inheritance.Model {
 
   // A C# code file can have several classes
   // The name of the file does not have to correspond to the class name 
-  public class Employee : Person {
+  public class Employee : Person, ITeam {
     public decimal Salary { get; set; }
     public DateTime Since { get; set; }
 
@@ -69,11 +69,14 @@ namespace Inheritance.Model {
 
     #endregion
 
+    public string Code {
+      get { return "E-"+Id; }
+      }
     public override decimal NextGiftPrice() {
       return 500.00M;
       }
     
-    public new string Status() { return "Internal";  }
+    public new string Status() { return "Internal"; }
     
     }
 

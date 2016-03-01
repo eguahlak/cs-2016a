@@ -29,6 +29,16 @@ namespace Hello.World {
         Console.WriteLine(((Person)sonja).Status());
         Console.WriteLine((sonja as Person).Status());
         }
+
+      
+      ITeam e1 = sonja;
+      Department adm = new Department("ADM", "Administration");
+      Console.WriteLine(adm.Code);
+      ITeam d1 = adm;
+
+      Console.WriteLine(e1.Code);
+      Console.WriteLine(d1.Code);
+      Console.WriteLine((adm as IEncryptable).Code);
       }
     }
   }
