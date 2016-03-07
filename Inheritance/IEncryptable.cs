@@ -5,7 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Inheritance.Model {
+  
   public interface IEncryptable {
     string Code { get; }
     }
+
   }

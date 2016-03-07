@@ -53,6 +53,14 @@ namespace Hello.World {
       Console.WriteLine(e1.Code);
       Console.WriteLine(d1.Code);
       Console.WriteLine((adm as IEncryptable).Code);
+
+      // sonja.Department = adm;
+      // adm.Add(sonja);
+      Console.WriteLine(sonja.Department);
+      adm.Employeez.Add(sonja);
+      Console.WriteLine(sonja.Department.Name);
+      Console.WriteLine(adm.Employeez.Count);
+
       }
     }
   }

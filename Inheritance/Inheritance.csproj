@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="OneToMany.cs" />
     <Compile Include="Department.cs" />
     <Compile Include="IEncryptable.cs" />
     <Compile Include="ITeam.cs" />
