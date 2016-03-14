@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CollectionNStuff {
   public class RandomEnumerable : IEnumerable<double> {
-    private Random randomizer = new Random(4711);
+    private Random randomizer = new Random(8);
 
     public class Enumerator : IEnumerator<double> {
       private double current;
