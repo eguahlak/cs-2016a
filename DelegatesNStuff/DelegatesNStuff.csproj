@@ -30,7 +30,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>DelegatesNStuff.DelegateProgram</StartupObject>
+    <StartupObject>DelegatesNStuff.YetAnotherProgram</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -43,9 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnotherDelegateProgram.cs" />
     <Compile Include="CustomPrinter.cs" />
     <Compile Include="FirstDelegates.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="YetAnotherProgram.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
