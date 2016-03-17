@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,6 +10,8 @@ namespace Utilities{
   public class Trie<T> : IEnumerable<T> {
     private static int alphabetSize = 256;
     private Branch<T> root = new Branch<T>();
+    public static Updater Update { get; set; }
+    public delegate T Updater(T data, T input);
 
     public T this[string text] {
       get {
@@ -40,7 +43,11 @@ namespace Utilities{
 
       public void Set(byte[] key, int index, T data) {
         if (key.Length == index) {
-          this.data = data;
+          //this.data = data;
+          if (Update == null)
+            this.data = data;
+          else
+            this.data = Trie<T>.Update(this.data, data);
           hasData = true;
           }
         else {
@@ -52,6 +59,7 @@ namespace Utilities{
       
       public T Get(byte[] key, int index) {
         if (key.Length == index) {
+          // if (data.Equals(default(T))) ; 
           if (hasData) return data;
           throw new KeyNotFoundException();
           }
@@ -74,8 +82,17 @@ namespace Utilities{
       }
     }
 
+  struct Word {
+    public string Text { get; set; }
+    public int Count { get; set; }
+    public Word(string text, int count) {
+      Text = text;
+      Count = count;
+      }
+    }
+
   class TrieTester {
-    static void Main() {
+    static void simpleTest() {
       Trie<string> trie = new Trie<string>();
       trie["anders"] = "Anders";
       trie["and"] = "And";
@@ -86,6 +103,34 @@ namespace Utilities{
       Console.WriteLine("{0} -> {1}", "and", trie["and"]);
       Console.WriteLine("--------");
       foreach (string data in trie) Console.WriteLine(data);
+      }
+    
+    private static Word update(Word data, Word input) {
+      return new Word(input.Text, data.Count + 1);
+      }
+    private static void kingJamesTest() {
+      Trie<Word> words = new Trie<Word>();
+      Trie<Word>.Update = update;
+      using (StreamReader file = new StreamReader(@"C:\Development\king james bible.txt")) {
+        do {
+          string line = file.ReadLine();
+          if (line == null) break;
+          string[] texts = line.Split(' ', ',', '.', ';', '\'');
+          foreach (string text in texts) {
+            Word word = new Word(text, 1);
+            words[text] = word;
+            }
+          }
+        while (true);
+        }
+      foreach (Word word in words)
+          Console.WriteLine("{0} -> {1}", word.Text, word.Count);
+      Console.ReadKey();
+      }
+
+    static void Main() {
+      //simpleTest();
+      kingJamesTest();
       } 
     }
 }
