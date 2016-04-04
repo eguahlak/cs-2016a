@@ -16,21 +16,26 @@
       <RowDefinition Height="30"/>
       <RowDefinition Height="30"/>
       <RowDefinition Height="30"/>
+      <RowDefinition Height="30"/>
       <RowDefinition/>
     </Grid.RowDefinitions>
     <Label Content="Fornavn" Grid.Column="0" Grid.Row="0"/>
     <Label Content="Efternavn" Grid.Column="0" Grid.Row="1"/>
     <Label Content="Fulde navn" Grid.Column="0" Grid.Row="2"/>
     <Label Content="Alder" Grid.Column="0" Grid.Row="3"/>
-    <TextBox Text="{Binding FirstName, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="0"/>
-    <TextBox Text="{Binding LastName, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="1"/>
-    <TextBox Text="{Binding FullName, Mode=OneWay}" Grid.Column="1" Grid.Row="2"/>
-    <Label Content="{Binding Age}" Grid.Column="1" Grid.Row="3"/>
+    <TextBox Text="{Binding Kurt.FirstName, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="0"/>
+    <TextBox Text="{Binding Kurt.LastName, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="1"/>
+    <TextBox Text="{Binding Kurt.FullName, Mode=OneWay}" Grid.Column="1" Grid.Row="2"/>
+    <Label Content="{Binding Kurt.Age}" Grid.Column="1" Grid.Row="3"/>
     <Button 
         Content="Hurra!" 
         Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2"
-        Margin="150,130,150,20" 
+        Margin="150,5,150,5" 
         Click="HurrayButton_Click"
         />
+    <ListBox Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"
+        ItemsSource="{Binding Employees}"
+        DisplayMemberPath="FullName">
+    </ListBox>
   </Grid>
 </Window>

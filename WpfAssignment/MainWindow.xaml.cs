@@ -18,15 +18,16 @@ namespace WpfAssignment {
   /// Interaction logic for MainWindow.xaml
   /// </summary>
   public partial class MainWindow : Window {
-    public Employee Kurt { get; set; } = new Employee("Kurt", "Hansen");
+    public Model Model { get; set; } = new Model();
+    // public Employee Kurt { get; set; } = new Employee("Kurt", "Hansen");
 
     public MainWindow() {
       InitializeComponent();
-      DataContext = Kurt;
+      DataContext = Model;
       }
 
     private void HurrayButton_Click(object sender, RoutedEventArgs e) {
-      Kurt.HaveBirthDay();
+      Model.Kurt.HaveBirthDay();
       }
     }
   }
