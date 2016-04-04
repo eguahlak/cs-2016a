@@ -26,7 +26,7 @@ namespace WpfAssignment {
       }
 
     private void HurrayButton_Click(object sender, RoutedEventArgs e) {
-      
+      Kurt.HaveBirthDay();
       }
     }
   }
