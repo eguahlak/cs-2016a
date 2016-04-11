@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ADO.NET {
-  public class OraclePersonMapper {
+  public class OraclePersonMapper : IPersonMapper {
     
     public IList<Person> ListPeople() {
       IList<Person> people = new List<Person>();
