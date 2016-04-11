@@ -7,17 +7,35 @@ using System.Threading.Tasks;
 
 namespace WpfAssignment {
   public class Model {
-    private ICollection<Employee> employeeList = new List<Employee>();
+    private ICollection<Employee> employees = new List<Employee>();
+    private ICollection<Department> departments = new List<Department>();
     
-    public ObservableCollection<Employee> Employees { get; set; }
+    public ObservableCollection<Employee> Employees { 
+      get { return new ObservableCollection<Employee>(employees);  }
+      }
     
+    public ObservableCollection<Department> Departments {
+      get { return new ObservableCollection<Department>(departments);  }
+      } 
+
     public Employee Kurt { get; set; } = new Employee("Den Anden", "Kurt");
     
+    private void createDepartment(string code, string name, params Employee[] employees) {
+      Department department = new Department(code, name);
+      foreach (Employee employee in employees) employee.Department = department;
+      }
+
     public Model() {
-      employeeList.Add(new Employee("Kurt", "Hansen"));
-      employeeList.Add(new Employee("Sonja", "Jensen"));
-      employeeList.Add(new Employee("Ib", "Olsen"));
-      Employees = new ObservableCollection<Employee>(employeeList);
+      createDepartment("ADM", "Administration",
+          new Employee("Kurt", "Hansen"),
+          new Employee("Sonja", "Jensen"),
+          new Employee("Ib", "Hansen")
+          );
+      createDepartment("EDP", "IT Department",
+          new Employee("Maria", "Kallas"),
+          new Employee("Michala", "Petri")
+          );
+      createDepartment("PRD", "Production");
       }
 
     }

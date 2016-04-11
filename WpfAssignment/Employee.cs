@@ -10,6 +10,7 @@ namespace WpfAssignment {
     private string firstName;
     private string lastName;
     public int Age { get; private set; }
+    private Department department;
 
     public string FirstName { 
       get { return firstName;  } 
@@ -48,6 +49,15 @@ namespace WpfAssignment {
       if (PropertyChanged != null)
           PropertyChanged(this, new PropertyChangedEventArgs(name));
       } 
+
+    public Department Department {
+      get { return department; }
+      set {
+        if (department != null) department.Employees.Remove(this);
+        department = value;
+        if (department != null) department.Employees.Add(this);
+        }
+      }
 
     }
 
