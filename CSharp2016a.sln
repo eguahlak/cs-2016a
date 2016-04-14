@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfAssignment", "WpfAssignm
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADO.NET", "ADO.NET\ADO.NET.csproj", "{003DA8A0-F97E-4F71-B57E-49068081AAAD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataSetNStuff", "DataSetNStuff\DataSetNStuff.csproj", "{DE4C54B7-5ED6-4E58-BD7B-C9EE0A6D0AA6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{003DA8A0-F97E-4F71-B57E-49068081AAAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{003DA8A0-F97E-4F71-B57E-49068081AAAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{003DA8A0-F97E-4F71-B57E-49068081AAAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE4C54B7-5ED6-4E58-BD7B-C9EE0A6D0AA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE4C54B7-5ED6-4E58-BD7B-C9EE0A6D0AA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE4C54B7-5ED6-4E58-BD7B-C9EE0A6D0AA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE4C54B7-5ED6-4E58-BD7B-C9EE0A6D0AA6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
