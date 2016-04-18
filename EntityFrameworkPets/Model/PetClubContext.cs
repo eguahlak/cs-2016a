@@ -13,11 +13,15 @@ namespace EntityFrameworkPets.Model {
     //@"Data Source=(localdb)\mssqllocaldb;Integrated Security=True";  
 
     public PetClubContext() : base(CONN) {
-
+      Database.SetInitializer<PetClubContext>(
+          //new DropCreateDatabaseAlways<PetClubContext>()
+          new DropCreateDatabaseIfModelChanges<PetClubContext>()
+          );
       }  
 
     public DbSet<Pet> Pets { get; set; }
     public DbSet<Club> Clubs { get; set; }
+    public DbSet<Person> People { get; set; }
     }
 
   }

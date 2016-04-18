@@ -11,6 +11,6 @@ namespace EntityFrameworkPets.Model {
     public string Code { get; set; }
     public string Name { get; set; }
     public IList<Person> Members { get; set; } = new List<Person>();
-
+    public Person Chairman { get; set; }
     }
   }
