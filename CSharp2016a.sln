@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADO.NET", "ADO.NET\ADO.NET.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataSetNStuff", "DataSetNStuff\DataSetNStuff.csproj", "{DE4C54B7-5ED6-4E58-BD7B-C9EE0A6D0AA6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkPets", "EntityFrameworkPets\EntityFrameworkPets.csproj", "{9519BD8F-EB7C-4D85-A937-FE7331871E73}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{DE4C54B7-5ED6-4E58-BD7B-C9EE0A6D0AA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE4C54B7-5ED6-4E58-BD7B-C9EE0A6D0AA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE4C54B7-5ED6-4E58-BD7B-C9EE0A6D0AA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9519BD8F-EB7C-4D85-A937-FE7331871E73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9519BD8F-EB7C-4D85-A937-FE7331871E73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9519BD8F-EB7C-4D85-A937-FE7331871E73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9519BD8F-EB7C-4D85-A937-FE7331871E73}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
