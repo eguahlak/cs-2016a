@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EntityFrameworkPets.Model {
   
-  public class Person {
+  public class Person : IOldPerson {
     public int Id { get; set; }
     public string FirstName { get; set; }
     public string LastName { get; set; }
@@ -17,8 +17,19 @@ namespace EntityFrameworkPets.Model {
     public IList<Club> Clubs { get; set; } = new List<Club>();
     [InverseProperty("Chairman")]
     public IList<Club> ClubsLeaded { get; set; } = new List<Club>();
+
+    string IOldPerson.FirstName {
+      get {
+        return FirstName.Substring(0,1)+".";
+        }
+      }
+
     public override string ToString() {
       return string.Format("{0} {1} is {2} years", FirstName, LastName, Age);
+      }
+
+    int IOldPerson.HaveBirthday() {
+      return ++Age;
       }
     }
   }

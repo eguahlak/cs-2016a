@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="Miscellaneous\StringUtilities.cs" />
     <Compile Include="Model\Club.cs" />
+    <Compile Include="Model\IOldPerson.cs" />
     <Compile Include="Model\Person.cs" />
     <Compile Include="Model\Pet.cs" />
     <Compile Include="Model\PetClubContext.cs" />

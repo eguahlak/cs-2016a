@@ -76,7 +76,13 @@ namespace EntityFrameworkPets {
         //testEsql(db);
         //testLinqI(db);
         //testLinqII(db);
-
+        Person kurt = new Person { Id=77, FirstName="Ole", LastName="Olsen", Age=53 };
+        if (kurt is IOldPerson) {
+          IOldPerson okurt = kurt as IOldPerson;
+          okurt.HaveBirthday();
+          Console.WriteLine("Kurt som old person: "+okurt.FirstName+" "+okurt.LastName+" "+okurt.Age);
+          }        
+        Console.WriteLine("Kurt som person:     "+kurt.FirstName+" "+kurt.LastName+" "+kurt.Age);
         Console.WriteLine("-".Times(45));
         }
       Console.ReadKey();
