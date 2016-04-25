@@ -17,5 +17,8 @@ namespace EntityFrameworkPets.Model {
     public IList<Club> Clubs { get; set; } = new List<Club>();
     [InverseProperty("Chairman")]
     public IList<Club> ClubsLeaded { get; set; } = new List<Club>();
+    public override string ToString() {
+      return string.Format("{0} {1} is {2} years", FirstName, LastName, Age);
+      }
     }
   }

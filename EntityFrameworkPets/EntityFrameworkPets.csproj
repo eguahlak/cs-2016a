@@ -55,6 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Miscellaneous\StringUtilities.cs" />
     <Compile Include="Model\Club.cs" />
     <Compile Include="Model\Person.cs" />
     <Compile Include="Model\Pet.cs" />
