@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Infrastructure;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -69,6 +70,17 @@ namespace EntityFrameworkPets {
           Console.WriteLine("Youngster: "+youngster); 
       }
     
+    private static void testInterface() {
+      Person kurt = new Person { Id=77, FirstName="Ole", LastName="Olsen", Age=53 };
+      if (kurt is IOldPerson) {
+        IOldPerson okurt = kurt as IOldPerson;
+        okurt.HaveBirthday();
+        Console.WriteLine("Kurt som old person: "+okurt.FirstName+" "+okurt.LastName+" "+okurt.Age);
+        }        
+      Console.WriteLine("Kurt som person:     "+kurt.FirstName+" "+kurt.LastName+" "+kurt.Age);
+      Console.WriteLine("-".Times(45));
+      }
+    
     static void Main(string[] args) {
       using (var db = new PetClubContext()) {
         //setup(db);
@@ -76,14 +88,11 @@ namespace EntityFrameworkPets {
         //testEsql(db);
         //testLinqI(db);
         //testLinqII(db);
-        Person kurt = new Person { Id=77, FirstName="Ole", LastName="Olsen", Age=53 };
-        if (kurt is IOldPerson) {
-          IOldPerson okurt = kurt as IOldPerson;
-          okurt.HaveBirthday();
-          Console.WriteLine("Kurt som old person: "+okurt.FirstName+" "+okurt.LastName+" "+okurt.Age);
-          }        
-        Console.WriteLine("Kurt som person:     "+kurt.FirstName+" "+kurt.LastName+" "+kurt.Age);
-        Console.WriteLine("-".Times(45));
+        //var pets = db.Pets.Select(p => new { PetName = p.Name, OwnerName = p.Owner.FirstName });
+        //foreach (var pet in pets)
+        //  Console.WriteLine(">>>"+pet.PetName+" "+pet.OwnerName);
+        var pets = db.Pets.Include(p => p.Owner);
+        foreach (Pet pet in pets) Console.WriteLine(">>> "+pet.Name+" "+pet.Owner.FirstName);
         }
       Console.ReadKey();
       }
