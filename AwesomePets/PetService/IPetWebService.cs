@@ -22,5 +22,32 @@ namespace PetService {
     [OperationContract]
     [WebGet(ResponseFormat = Json, UriTemplate = "pets/{id}")]
     Pet GetPet(string id);
+
+    [OperationContract]
+    [WebInvoke(
+        Method = "GET",
+        UriTemplate = "pets",
+        ResponseFormat = Json
+        )]
+    ICollection<Pet> GetPets();
+
+    [OperationContract]
+    [WebInvoke(
+        Method = "POST",
+        UriTemplate = "pets",
+        RequestFormat = Json,
+        BodyStyle = WebMessageBodyStyle.Bare
+        )]
+    void PostPet(Pet pet);
+
+    [OperationContract]
+    [WebInvoke(
+        Method = "DELETE",
+        UriTemplate = "pets/{id}",
+        RequestFormat = Json,
+        ResponseFormat = Json,
+        BodyStyle = WebMessageBodyStyle.Bare
+        )]
+    Pet DeletePet(string id);
     }
   }

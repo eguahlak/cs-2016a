@@ -8,7 +8,7 @@ using PetService.Model;
 
 namespace PetService {
   public class PetWebService : IPetWebService {
-    private IDictionary<int, Pet> pets =
+    private static IDictionary<int, Pet> pets =
         new Dictionary<int, Pet>();
 
     public PetWebService() {
@@ -21,10 +21,30 @@ namespace PetService {
       return new Pet(7, name, 1);
       }
 
+    public Pet DeletePet(string idText) {
+      Console.WriteLine("- Deleting pet with id = "+idText);
+      int id = int.Parse(idText);
+      Pet pet = pets[id];
+      bool success = pets.Remove(id);
+      Console.WriteLine("  "+(success ? "OK" : "Hovsa"));
+      Console.WriteLine("  "+pets.Count+" pets left");
+      return pet;
+      }
+
     public Pet GetPet(string idText) {
       Console.WriteLine("- Getting pet with id = "+idText);
       int id = int.Parse(idText);
       return pets[id];
+      }
+
+    public ICollection<Pet> GetPets() {
+      Console.WriteLine("- Getting all pets");
+      return pets.Values;
+      }
+
+    public void PostPet(Pet pet) {
+      Console.WriteLine("- Posting pet");
+      pets[pet.Id] = pet;
       }
 
     public string SayHello(string name) {
