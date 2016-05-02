@@ -15,5 +15,6 @@ namespace AprilRestService {
     [OperationContract]
     [WebInvoke(BodyStyle = Bare, ResponseFormat = Json, RequestFormat = Json)]
     Person HaveBirthday(Person who);
+
     }
   }

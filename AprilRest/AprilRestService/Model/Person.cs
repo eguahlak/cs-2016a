@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Runtime.Serialization;
 
 namespace AprilRestService.Model {
@@ -12,4 +13,11 @@ namespace AprilRestService.Model {
     [DataMember]
     public Address Address { get; set; }
     }
+
+  [CollectionDataContract]
+  public class People : List<Person> {
+    public People() { }
+    public People(ICollection<Person> people) : base(people) { }
+    }
+
   }

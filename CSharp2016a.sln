@@ -41,6 +41,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AprilRestHostApplication", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AprilRestWindowsServiceApplication", "AprilRest\AprilRestWindowsServiceApplication\AprilRestWindowsServiceApplication.csproj", "{228C530F-9A75-4AD1-AF48-F76964B2073B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AwesomePets", "AwesomePets", "{CA988871-F39B-441F-AAC3-DF6D6A838813}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetService", "AwesomePets\PetService\PetService.csproj", "{8D8F23C0-173F-47EF-8605-2D87F123DB92}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetHostApplication", "AwesomePets\PetHostApplication\PetHostApplication.csproj", "{A0BDEBEF-8DD6-45DC-8A58-0B01E4A88495}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -119,6 +125,14 @@ Global
 		{228C530F-9A75-4AD1-AF48-F76964B2073B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{228C530F-9A75-4AD1-AF48-F76964B2073B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{228C530F-9A75-4AD1-AF48-F76964B2073B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D8F23C0-173F-47EF-8605-2D87F123DB92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D8F23C0-173F-47EF-8605-2D87F123DB92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D8F23C0-173F-47EF-8605-2D87F123DB92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D8F23C0-173F-47EF-8605-2D87F123DB92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0BDEBEF-8DD6-45DC-8A58-0B01E4A88495}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0BDEBEF-8DD6-45DC-8A58-0B01E4A88495}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0BDEBEF-8DD6-45DC-8A58-0B01E4A88495}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0BDEBEF-8DD6-45DC-8A58-0B01E4A88495}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -127,5 +141,7 @@ Global
 		{ACFEB575-A159-44BE-A962-0BE09D988D7A} = {804F7962-063E-461B-9250-94923EEF3709}
 		{8BD08C86-2F7B-4362-8E90-861642796820} = {804F7962-063E-461B-9250-94923EEF3709}
 		{228C530F-9A75-4AD1-AF48-F76964B2073B} = {804F7962-063E-461B-9250-94923EEF3709}
+		{8D8F23C0-173F-47EF-8605-2D87F123DB92} = {CA988871-F39B-441F-AAC3-DF6D6A838813}
+		{A0BDEBEF-8DD6-45DC-8A58-0B01E4A88495} = {CA988871-F39B-441F-AAC3-DF6D6A838813}
 	EndGlobalSection
 EndGlobal
