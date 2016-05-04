@@ -5,11 +5,13 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 using PetService.Model;
+using System.ServiceModel.Web;
+using System.Net;
 
 namespace PetService {
   public class PetWebService : IPetWebService {
-    private static IDictionary<int, Pet> pets =
-        new Dictionary<int, Pet>();
+    private static IDictionary<int, Pet> pets
+      = new Dictionary<int, Pet>();
 
     public PetWebService() {
       pets[7] = new Pet(7, "Ninus", 1);

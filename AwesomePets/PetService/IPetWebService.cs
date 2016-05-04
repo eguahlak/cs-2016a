@@ -24,8 +24,8 @@ namespace PetService {
     Pet GetPet(string id);
 
     [OperationContract]
-    [WebInvoke(
-        Method = "GET",
+    [WebGet(
+        //Method = "GET",
         UriTemplate = "pets",
         ResponseFormat = Json
         )]

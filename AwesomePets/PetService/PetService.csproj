@@ -44,7 +44,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="IPetWebService.cs" />
     <Compile Include="Model\Pet.cs" />
     <Compile Include="PetWebService.cs" />
